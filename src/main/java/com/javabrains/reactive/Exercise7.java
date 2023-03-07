@@ -1,6 +1,7 @@
 package com.javabrains.reactive;
 
 import reactor.core.Disposable;
+import reactor.core.publisher.Flux;
 
 import java.io.IOException;
 
@@ -48,7 +49,16 @@ public class Exercise7 {
         // ReactiveSources.intNumbersFluxWithRepeat().distinct().subscribe(System.out::println);
 
         // Print from intNumbersFluxWithRepeat excluding immediately repeating numbers
-        ReactiveSources.intNumbersFluxWithRepeat().distinctUntilChanged().subscribe(System.out::println);
+//        ReactiveSources.intNumbersFluxWithRepeat().distinctUntilChanged().subscribe(System.out::println);
+
+
+
+
+        //Practice
+        ReactiveSources
+                .intNumbersFlux()
+                .map(num -> ReactiveSources.multiply(num))
+                .subscribe(System.out::println);
 
         System.out.println("Press a key to end");
         System.in.read();

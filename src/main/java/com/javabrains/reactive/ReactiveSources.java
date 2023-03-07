@@ -24,6 +24,10 @@ public class ReactiveSources {
                 .delayElements(Duration.ofSeconds(1));
     }
 
+    public static int multiply(int num){
+        return num*num;
+    }
+
     public static Flux<Integer> intNumbersFluxWithException() {
         return Flux
                 .range(1, 10)
