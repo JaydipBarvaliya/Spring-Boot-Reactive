@@ -46,7 +46,7 @@ public class ReactiveSources {
                 new User(2, "Cristiano", "Ronaldo"),
                 new User(2, "Diego", "Maradona"),
                 new User(4, "Zinedine", "Zidane"),
-                new User(5, "Jürgen", "Klinsmann"),
+                new User(15, "Jürgen", "Klinsmann"),
                 new User(6, "Gareth", "Bale")
         ).delayElements(Duration.ofSeconds(1));
     }
@@ -68,7 +68,7 @@ public class ReactiveSources {
 
     public static Flux<Integer> intNumbersFluxWithRepeat() {
         return Flux
-                .just(1, 2, 1, 1, 3, 2, 4, 5, 1)
+                .just(1, 2, 1, 1, 3, 2, 4, 5, 1,1,1,1,1,1,1,1,1,1,1000)
                 .delayElements(Duration.ofSeconds(1));
     }
 }
